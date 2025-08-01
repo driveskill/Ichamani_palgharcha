@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ईच्छामणी पालघरचा - Ichchamani Palgharcha</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f2f2f2;
+      transition: background 0.3s, color 0.3s;
+      border-top: 8px solid #d35400; /* Darker Saffron */
+      border-bottom: 8px solid #145a32; /* Darker Green */
+    }
+
+    .banner {
+      width: 100%;
+      max-width: 700px;
+      height: 250px;
+      background: url('ganpati.jpg') center/cover no-repeat;
+      animation: zoomFadeIn 1.5s ease-in-out forwards;
+border-radius: 20px;
+box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes zoomFadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .toggle-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 12px 18px;
+      background: transparent;
+    }
+
+    .toggle-container i {
+      font-size: 24px;
+      color: #f2f2f2;
+      cursor: pointer;
+    }
+
+    nav {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 12px;
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      color: #FFA500;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    p {
+      color: #e0e0e0;
+      font-size: 1.1rem;
+    }
+
+    .contact-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 14px;
+      max-width: 400px;
+      margin: 20px auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .contact-box a {
+      color: #1DA1F2;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .dark-mode {
+      background: #1a1a1a;
+      color: #f2f2f2;
+    }
+
+    .dark-mode nav {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .dark-mode .contact-box {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .typing-text {
+  display: inline-block;
+  border-right: 2px solid orange;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+  </style>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="banner"></div>
+
+  <div class="toggle-container">
+    <i class="fas fa-moon" onclick="toggleDarkMode()"></i>
+  </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#events">Events</a>
+    <a href="photo.html">photo's</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+<section id="about">
+  <h2><span class="typing-text">ईच्छामणी पालघरचा</span></h2>
+  <p>ईच्छा धरी मनी पुर्ण करी ईच्छामणी.</p>
+</section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <p>Follow us on Instagram:</p>
+      <a href="https://instagram.com/ichamani_palgharcha" target="_blank">@ichamani_palgharcha</a>
+    </div>
+  </section>
+</body>
+</html>
