@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ईच्छामणी पालघरचा - Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Baloo 2', cursive;
+      background: linear-gradient(135deg, #00274D, #005A87);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .banner {
+      text-align: center;
+      padding: 20px;
+      animation: zoomFadeIn 2s ease-in-out;
+    }
+
+    .banner img {
+      width: 90%;
+      max-width: 700px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .container {
+      margin: 40px auto;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #FFA500;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-top: 15px;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #FFA500;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff7300;
+      transform: scale(1.05);
+    }
+
+    @keyframes zoomFadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Tricolor border */
+    .tricolor-border {
+      height: 8px;
+      width: 100%;
+      background: linear-gradient(to right, orange, white, green);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tricolor-border"></div>
+
+  <div class="banner">
+    <img src="ganpati.jpg" alt="Ganpati Banner">
+  </div>
+
+  <div class="container">
+    <h1>ईच्छामणी पालघरचा 2025</h1>
+    <p>Welcome to the official page of Palghar's beloved Ganpati - Ichamani!</p>
+    <p>Stay tuned for updates, event detail</p>
+    <button class="btn" onclick="window.location.href='index.html'">Enter Main Site</button>
+  </div>
+
+</body>
+</html>
