@@ -9,117 +9,39 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      border-top: 8px solid #d35400;
-      border-bottom: 8px solid #145a32;
+      background: black;
+      color: white;
+      overflow-x: hidden;
     }
 
-    .banner {
-      width: 100%;
-      max-width: 700px;
-      height: 250px;
-      margin: auto;
-      background: url('ganpati.jpg') center/cover no-repeat;
-      border-radius: 20px;
-      animation: zoomFadeIn 1.5s ease-in-out forwards;
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    .photo-wrapper {
+      height: 100vh;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
     }
 
-    @keyframes zoomFadeIn {
-      0% { opacity: 0; transform: scale(0.85); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    .toggle-container {
+    .photo {
+      height: 100vh;
+      scroll-snap-align: start;
       display: flex;
-      justify-content: flex-end;
-      padding: 12px 18px;
-    }
-
-    .toggle-container i {
-      font-size: 24px;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    h1 {
-      text-align: center;
-      color: #ffa500;
-      margin: 20px 0 10px;
-    }
-
-    .filter-buttons {
-      display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 10px;
-      margin: 10px;
     }
 
-    .filter-buttons button {
-      padding: 8px 16px;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      background: #ffa500;
-      color: #000;
-      transition: 0.3s;
-    }
-
-    .filter-buttons button:hover {
-      background: #ff7f00;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 6px;
-      padding: 10px;
-    }
-
-    .gallery img {
-      width: 100%;
-      aspect-ratio: 1/1.2;
+    .photo img {
+      max-height: 95%;
+      max-width: 95%;
       object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.3);
-      cursor: pointer;
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
       transition: transform 0.2s;
+      cursor: pointer;
     }
 
-    .gallery img:hover {
+    .photo img:hover {
       transform: scale(1.03);
     }
 
-    .hidden { display: none; }
-
-    .tabs {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      padding: 10px;
-      background: #000;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-
-    .tabs i {
-      font-size: 26px;
-      color: gray;
-      cursor: pointer;
-    }
-
-    .tabs i.active {
-      color: white;
-      border-bottom: 2px solid white;
-    }
-
-    /* Lightbox */
     .lightbox {
       position: fixed;
       top: 0; left: 0;
@@ -138,19 +60,35 @@
       box-shadow: 0 0 20px #fff;
     }
 
-    .dark-mode {
-      background: #111;
+    .tabs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 10px;
+      background: #000;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .tabs i {
+      font-size: 26px;
+      color: gray;
+      cursor: pointer;
+    }
+
+    .tabs i.active {
+      color: white;
+      border-bottom: 2px solid white;
     }
   </style>
   <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-
     function openLightbox(src) {
       const img = document.getElementById('lightbox-img');
       const lightbox = document.getElementById('lightbox');
-
       img.src = src;
       lightbox.style.display = 'flex';
     }
@@ -158,40 +96,18 @@
     function closeLightbox() {
       const lightbox = document.getElementById('lightbox');
       const img = document.getElementById('lightbox-img');
-
       img.src = '';
       lightbox.style.display = 'none';
-    }
-
-    function filterItems(year) {
-      document.querySelectorAll('.gallery img').forEach(item => {
-        item.classList.toggle('hidden', year !== 'all' && item.dataset.year !== year);
-      });
     }
   </script>
 </head>
 <body>
-  <div class="banner"></div>
 
-  <div class="toggle-container">
-    <i class="fas fa-moon" onclick="toggleDarkMode()"></i>
-  </div>
-
-  <h1>📸 फोटो गॅलरी</h1>
-
-  <!-- Filter Buttons -->
-  <div class="filter-buttons">
-    <button onclick="filterItems('all')">सर्व</button>
-    <button onclick="filterItems('2024')">2024</button>
-    <button onclick="filterItems('2025')">2025</button>
-  </div>
-
-  <!-- Image Gallery -->
-  <div class="gallery">
-    <img src="photo.jpg" data-year="2025" onclick="openLightbox(this.src)">
-    <img src="photo 2.jpg" data-year="2025" onclick="openLightbox(this.src)">
-    <img src="photo3.jpg" data-year="2024" onclick="openLightbox(this.src)">
-    <img src="photo4.jpg" data-year="2024" onclick="openLightbox(this.src)">
+  <div class="photo-wrapper">
+    <div class="photo"><img src="photo.jpg" onclick="openLightbox(this.src)"></div>
+    <div class="photo"><img src="photo 2.jpg" onclick="openLightbox(this.src)"></div>
+    <div class="photo"><img src="photo3.jpg" onclick="openLightbox(this.src)"></div>
+    <div class="photo"><img src="photo4.jpg" onclick="openLightbox(this.src)"></div>
   </div>
 
   <!-- Lightbox -->
@@ -201,8 +117,9 @@
 
   <!-- Bottom Tabs -->
   <div class="tabs">
-    <i class="fas fa-th active"></i>
+    <i class="fas fa-th active" title="Gallery"></i>
     <a href="video.html"><i class="fas fa-clapperboard" title="Reels"></i></a>
   </div>
+
 </body>
 </html>
