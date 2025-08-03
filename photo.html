@@ -72,14 +72,14 @@
       background: #ff7f00;
     }
 
-    .gallery, .video-gallery {
+    .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 6px;
       padding: 10px;
     }
 
-    .gallery img, .video-gallery video {
+    .gallery img {
       width: 100%;
       aspect-ratio: 1/1.2;
       object-fit: cover;
@@ -89,7 +89,7 @@
       transition: transform 0.2s;
     }
 
-    .gallery img:hover, .video-gallery video:hover {
+    .gallery img:hover {
       transform: scale(1.03);
     }
 
@@ -131,12 +131,11 @@
       z-index: 999;
     }
 
-    .lightbox img, .lightbox video {
+    .lightbox img {
       max-width: 90%;
       max-height: 90%;
       border-radius: 12px;
       box-shadow: 0 0 20px #fff;
-      display: none;
     }
 
     .dark-mode {
@@ -148,63 +147,24 @@
       document.body.classList.toggle('dark-mode');
     }
 
-    function openLightbox(src, isVideo = false) {
+    function openLightbox(src) {
       const img = document.getElementById('lightbox-img');
-      const video = document.getElementById('lightbox-video');
       const lightbox = document.getElementById('lightbox');
 
-      if (isVideo) {
-        img.style.display = 'none';
-        img.src = '';
-        video.src = src;
-        video.style.display = 'block';
-        video.play();
-      } else {
-        video.pause();
-        video.style.display = 'none';
-        video.src = '';
-        img.src = src;
-        img.style.display = 'block';
-      }
-
+      img.src = src;
       lightbox.style.display = 'flex';
     }
 
     function closeLightbox() {
       const lightbox = document.getElementById('lightbox');
-      const video = document.getElementById('lightbox-video');
       const img = document.getElementById('lightbox-img');
 
-      video.pause();
-      video.src = '';
       img.src = '';
-
       lightbox.style.display = 'none';
-      img.style.display = 'none';
-      video.style.display = 'none';
-    }
-
-    function switchTab(type) {
-      const imgIcon = document.getElementById('tab-img');
-      const vidIcon = document.getElementById('tab-vid');
-      const imgGallery = document.getElementById('image-gallery');
-      const vidGallery = document.getElementById('video-gallery');
-
-      if (type === 'image') {
-        imgGallery.classList.remove('hidden');
-        vidGallery.classList.add('hidden');
-        imgIcon.classList.add('active');
-        vidIcon.classList.remove('active');
-      } else {
-        vidGallery.classList.remove('hidden');
-        imgGallery.classList.add('hidden');
-        vidIcon.classList.add('active');
-        imgIcon.classList.remove('active');
-      }
     }
 
     function filterItems(year) {
-      document.querySelectorAll('.gallery img, .video-gallery video').forEach(item => {
+      document.querySelectorAll('.gallery img').forEach(item => {
         item.classList.toggle('hidden', year !== 'all' && item.dataset.year !== year);
       });
     }
@@ -227,30 +187,22 @@
   </div>
 
   <!-- Image Gallery -->
-  <div id="image-gallery" class="gallery">
+  <div class="gallery">
     <img src="photo.jpg" data-year="2025" onclick="openLightbox(this.src)">
     <img src="photo 2.jpg" data-year="2025" onclick="openLightbox(this.src)">
     <img src="photo3.jpg" data-year="2024" onclick="openLightbox(this.src)">
     <img src="photo4.jpg" data-year="2024" onclick="openLightbox(this.src)">
   </div>
 
-  <!-- Video Gallery -->
-  <div id="video-gallery" class="video-gallery hidden">
-    <video src="video.mp4" data-year="2025" onclick="openLightbox(this.src, true)" controls></video>
-    <video src="video2.mp4" data-year="2024" onclick="openLightbox(this.src, true)" controls></video>
-    <video src="video3.mp4" data-year="2025" onclick="openLightbox(this.src, true)" controls></video>
-  </div>
-
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <img id="lightbox-img" src="" alt="Full View">
-    <video id="lightbox-video" controls></video>
   </div>
 
   <!-- Bottom Tabs -->
   <div class="tabs">
-    <i class="fas fa-th active" id="tab-img" onclick="switchTab('image')"></i>
-    <i class="fas fa-clapperboard" id="tab-vid" onclick="switchTab('video')"></i>
+    <i class="fas fa-th active"></i>
+    <a href="video.html"><i class="fas fa-clapperboard" title="Reels"></i></a>
   </div>
 </body>
 </html>
