@@ -1,234 +1,249 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-  <title>Ganpati Reels</title>  
-  <style>  
-    body {  
-      margin: 0;  
-      font-family: sans-serif;  
-      background: black;  
-      overflow-x: hidden;  
-      color: white;  
-    }  
-    .reel, .ree2, .ree3, .ree4, .reel5, .ree6, .ree7 {  
-      position: relative;  
-      height: 100vh;  
-      scroll-snap-align: start;  
-    }  
-    video {  
-      height: 100%;  
-      width: 100%;  
-      object-fit: cover;  
-    }  
-    .heart {  
-      position: absolute;  
-      top: 50%;  
-      left: 50%;  
-      transform: translate(-50%, -50%);  
-      font-size: 80px;  
-      color: red;  
-      opacity: 0;  
-      animation: pop 0.5s ease;  
-    }  
-    @keyframes pop {  
-      0% { opacity: 0; transform: scale(0.8) translate(-50%, -50%); }  
-      50% { opacity: 1; transform: scale(1.2) translate(-50%, -50%); }  
-      100% { opacity: 0; transform: scale(1) translate(-50%, -50%); }  
-    }  
-    .actions {  
-      position: absolute;  
-      bottom: 70px;  
-      right: 10px;  
-      display: flex;  
-      flex-direction: column;  
-      gap: 20px;  
-      font-size: 24px;  
-    }  
-    .comment-box {  
-      position: absolute;  
-      bottom: 10px;  
-      width: 90%;  
-      left: 5%;  
-      display: flex;  
-      align-items: center;  
-    }  
-    .comment-box input {  
-      flex: 1;  
-      padding: 10px;  
-      border-radius: 20px;  
-      border: none;  
-      font-size: 16px;  
-      outline: none;  
-    }  
-    .comment-box button {  
-      background: none;  
-      border: none;  
-      color: white;  
-      font-size: 20px;  
-      margin-left: 10px;  
-      cursor: pointer;  
-    }  
-    .comments {  
-      position: absolute;  
-      bottom: 60px;  
-      left: 10px;  
-      right: 10px;  
-      max-height: 150px;  
-      overflow-y: auto;  
-      font-size: 14px;  
-    }  
-    .comments div {  
-      background: rgba(255, 255, 255, 0.1);  
-      padding: 6px 12px;  
-      border-radius: 10px;  
-      margin-top: 5px;  
-    }  
-  </style>  
-</head>  
-<body>    <div class="reel" ondblclick="showHeart(this)">  
-    <video src="video.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>  
-    <div class="heart">❤️</div>  
-    <div class="actions">  
-      <div>❤️</div>  
-      <div>📤</div>  
-    </div>  
-    <div class="comment-box">  
-      <input type="text" placeholder="Add a comment..." />  
-      <button>➤</button>  
-    </div>  
-    <div class="comments"></div>  
-  </div>    <div class="ree2" ondblclick="showHeart(this)">  
-    <video src="video2.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>  
-    <div class="heart">❤️</div>  
-    <div class="actions">  
-      <div>❤️</div>  
-      <div>💬</div>  
-      <div>📤</div>  
-    </div>  
-    <div class="comment-box">  
-      <input type="text" placeholder="Add a comment..." />  
-      <button>➤</button>  
-    </div>  
-    <div class="comments"></div>  
-  </div>    <div class="ree3" ondblclick="showHeart(this)">  
-    <video src="video3.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>  
-    <div class="heart">❤️</div>  
-    <div class="actions">  
-      <div>❤️</div>  
-      <div>📤</div>  
-    </div>  
-    <div class="comment-box">  
-      <input type="text" placeholder="Add a comment..." />  
-      <button>➤</button>  
-    </div>  
-    <div class="comments"></div>  
-  </div>    <div class="ree4" ondblclick="showHeart(this)">  
-    <video src="video4.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>  
-    <div class="heart">❤️</div>  
-    <div class="actions">  
-      <div>❤️</div>  
-      <div>📤</div>  
-    </div>  
-    <div class="comment-box">  
-      <input type="text" placeholder="Add a comment..." />  
-      <button>➤</button>  
-    </div>  
-    <div class="comments"></div>  
-  </div>    <div class="reel5" ondblclick="showHeart(this)">  
-    <video src="video5.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>  
-    <div class="heart">❤️</div>  
-    <div class="actions">  
-      <div>❤️</div>  
-    </div>  
-    <div class="comment-box">  
-      <input type="text" placeholder="Add a comment..." />  
-      <button>➤</button>  
-    </div>  
-    <div class="comments"></div>  
-  </div>    <div class="ree6" ondblclick="showHeart(this)">  
-    <video src="video6.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>  
-    <div class="heart">❤️</div>  
-    <div class="actions">  
-      <div>❤️</div>  
-      <div>📤</div>  
-    </div>  
-    <div class="comment-box">  
-      <input type="text" placeholder="Add a comment..." />  
-      <button>➤</button>  
-    </div>  
-    <div class="comments"></div>  
-  </div>    <div class="ree7" ondblclick="showHeart(this)">  
-    <video src="video7.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>  
-    <div class="heart">❤️</div>  
-    <div class="actions">  
-      <div>❤️</div>  
-      <div>📤</div>  
-    </div>  
-    <div class="comment-box">  
-      <input type="text" placeholder="Add a comment..." />  
-      <button>➤</button>  
-    </div>  
-    <div class="comments"></div>  
-  </div>    <div class="reel" ondblclick="showHeart(this)">  
-    <video src="video.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>  
-    <div class="heart">❤️</div>  
-    <div class="actions">  
-      <div>❤️</div>  
-      <div>📤</div>  
-    </div>  
-    <div class="comment-box">  
-      <input type="text" placeholder="Add a comment..." />  
-      <button>➤</button>  
-    </div>  
-    <div class="comments"></div>  
-  </div>    <script>  
-    function showHeart(reel) {  
-      const heart = reel.querySelector(".heart");  
-      heart.style.animation = 'none';  
-      heart.offsetHeight; // force reflow  
-      heart.style.animation = null;  
-    }  
-  
-    function enableSound(video) {  
-      video.muted = false;  
-    }  
-  
-    // Scroll-based mute/unmute for all video reels  
-    function handleScroll() {  
-      const reels = document.querySelectorAll("div");  
-      reels.forEach(reel => {  
-        const video = reel.querySelector("video");  
-        if (video) {  
-          const rect = reel.getBoundingClientRect();  
-          if (rect.top < window.innerHeight && rect.bottom > 0) {  
-            if (!video.muted) video.play();  
-          } else {  
-            video.pause();  
-            video.muted = true;  
-          }  
-        }  
-      });  
-    }  
-  
-    window.addEventListener("scroll", handleScroll);  
-    window.addEventListener("load", handleScroll);  
-  
-    // Comment system  
-    document.querySelectorAll(".comment-box").forEach(box => {  
-      const input = box.querySelector("input");  
-      const button = box.querySelector("button");  
-      const comments = box.parentElement.querySelector(".comments");  
-  
-      button.addEventListener("click", () => {  
-        const text = input.value.trim();  
-        if (text !== "") {  
-          const div = document.createElement("div");  
-          div.textContent = text;  
-          comments.appendChild(div);  
-          input.value = "";  
-        }  
-      });  
-    });  
-  </script>  </body>  
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ganpati Reels</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: black;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* Main scroll container */
+    .container {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .reel, .ree2, .ree3, .ree4, .reel5, .ree6, .ree7 {
+      position: relative;
+      height: 100vh;
+      scroll-snap-align: start;
+    }
+
+    video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .heart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      color: red;
+      opacity: 0;
+      animation: pop 0.5s ease;
+    }
+
+    @keyframes pop {
+      0% { opacity: 0; transform: scale(0.8) translate(-50%, -50%); }
+      50% { opacity: 1; transform: scale(1.2) translate(-50%, -50%); }
+      100% { opacity: 0; transform: scale(1) translate(-50%, -50%); }
+    }
+
+    .actions {
+      position: absolute;
+      bottom: 70px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 24px;
+    }
+
+    .comment-box {
+      position: absolute;
+      bottom: 10px;
+      width: 90%;
+      left: 5%;
+      display: flex;
+      align-items: center;
+    }
+
+    .comment-box input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .comment-box button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .comments {
+      position: absolute;
+      bottom: 60px;
+      left: 10px;
+      right: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    .comments div {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px 12px;
+      border-radius: 10px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="reel" ondblclick="showHeart(this)">
+      <video src="video.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>
+      <div class="heart">❤️</div>
+      <div class="actions"><div>❤️</div><div>📤</div></div>
+      <div class="comment-box"><input type="text" placeholder="Add a comment..." /><button>➤</button></div>
+      <div class="comments"></div>
+    </div>
+
+    <div class="ree2" ondblclick="showHeart(this)">
+      <video src="video2.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>
+      <div class="heart">❤️</div>
+      <div class="actions"><div>❤️</div><div>💬</div><div>📤</div></div>
+      <div class="comment-box"><input type="text" placeholder="Add a comment..." /><button>➤</button></div>
+      <div class="comments"></div>
+    </div>
+
+    <div class="ree3" ondblclick="showHeart(this)">
+      <video src="video3.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>
+      <div class="heart">❤️</div>
+      <div class="actions"><div>❤️</div><div>📤</div></div>
+      <div class="comment-box"><input type="text" placeholder="Add a comment..." /><button>➤</button></div>
+      <div class="comments"></div>
+    </div>
+
+    <div class="ree4" ondblclick="showHeart(this)">
+      <video src="video4.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>
+      <div class="heart">❤️</div>
+      <div class="actions"><div>❤️</div><div>📤</div></div>
+      <div class="comment-box"><input type="text" placeholder="Add a comment..." /><button>➤</button></div>
+      <div class="comments"></div>
+    </div>
+
+    <div class="reel5" ondblclick="showHeart(this)">
+      <video src="video5.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>
+      <div class="heart">❤️</div>
+      <div class="actions"><div>❤️</div></div>
+      <div class="comment-box"><input type="text" placeholder="Add a comment..." /><button>➤</button></div>
+      <div class="comments"></div>
+    </div>
+
+    <div class="ree6" ondblclick="showHeart(this)">
+      <video src="video6.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>
+      <div class="heart">❤️</div>
+      <div class="actions"><div>❤️</div><div>📤</div></div>
+      <div class="comment-box"><input type="text" placeholder="Add a comment..." /><button>➤</button></div>
+      <div class="comments"></div>
+    </div>
+
+    <div class="ree7" ondblclick="showHeart(this)">
+      <video src="video7.mp4" autoplay muted playsinline onclick="enableSound(this)"></video>
+      <div class="heart">❤️</div>
+      <div class="actions"><div>❤️</div><div>📤</div></div>
+      <div class="comment-box"><input type="text" placeholder="Add a comment..." /><button>➤</button></div>
+      <div class="comments"></div>
+    </div>
+  </div>
+
+<script>
+  function showHeart(reel) {
+    const heart = reel.querySelector(".heart");
+    heart.style.animation = 'none';
+    heart.offsetHeight;
+    heart.style.animation = null;
+  }
+
+  function enableSound(video) {
+    // Mute all others and play this one
+    document.querySelectorAll("video").forEach(v => {
+      if (v !== video) {
+        v.muted = true;
+        v.pause();
+      }
+    });
+    video.muted = false;
+    video.play();
+  }
+
+  function getVideoInCenter() {
+    const reels = document.querySelectorAll(".container > div");
+    const centerY = window.innerHeight / 2;
+    let bestReel = null;
+    let minDistance = Infinity;
+
+    reels.forEach(reel => {
+      const rect = reel.getBoundingClientRect();
+      const reelCenter = rect.top + rect.height / 2;
+      const distance = Math.abs(centerY - reelCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        bestReel = reel;
+      }
+    });
+
+    return bestReel;
+  }
+
+  function handleScroll() {
+    const current = getVideoInCenter();
+
+    document.querySelectorAll(".container > div").forEach(reel => {
+      const video = reel.querySelector("video");
+      if (!video) return;
+
+      if (reel === current) {
+        video.play();
+        video.muted = false;
+      } else {
+        video.pause();
+        video.muted = true;
+      }
+    });
+  }
+
+  // Scroll listener with timeout to avoid continuous triggering
+  window.addEventListener("scroll", () => {
+    clearTimeout(window.scrollTimeout);
+    window.scrollTimeout = setTimeout(handleScroll, 100);
+  });
+
+  window.addEventListener("load", handleScroll);
+
+  // Comment box
+  document.querySelectorAll(".comment-box").forEach(box => {
+    const input = box.querySelector("input");
+    const button = box.querySelector("button");
+    const comments = box.parentElement.querySelector(".comments");
+
+    button.addEventListener("click", () => {
+      const text = input.value.trim();
+      if (text !== "") {
+        const div = document.createElement("div");
+        div.textContent = text;
+        comments.appendChild(div);
+        input.value = "";
+      }
+    });
+  });
+</script>
+</body>
+</html>
